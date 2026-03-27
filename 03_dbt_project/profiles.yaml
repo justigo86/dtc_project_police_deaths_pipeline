@@ -1,0 +1,15 @@
+police_deaths_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      # We use env_var to keep your specific IDs out of the git repo
+      project: "{{ env_var('GCP_PROJECT_ID') }}"
+      dataset: "{{ env_var('GCP_DATASET') }}"
+      threads: 4
+      # This points to the JSON key inside the Docker container
+      keyfile: /root/.gcp/service_account.json
+      location: "{{ env_var('GCP_LOCATION') }}"
+      priority: interactive
+      retries: 1

@@ -1,43 +1,9 @@
 services:
-  # The Postgres Database Service
-  # pgdatabase:
-  #   image: postgres:18
-  #   container_name: pgdatabase
-  #   environment:
-  #     POSTGRES_USER: "root"
-  #     POSTGRES_PASSWORD: "root"
-  #     POSTGRES_DB: "ny_taxi"
-  #   volumes:
-  #     - "ny_taxi_postgres_data:/var/lib/postgresql"
-  #   ports:
-  #     - "5432:5432"
-  #   # networks:
-  #   #   - pg-shared-network
-  #   depends_on:
-  #     kestra:
-  #       condition: service_started
-
-  # # The pgAdmin Management Service
-  # pgadmin:
-  #   image: dpage/pgadmin4
-  #   container_name: my-pgadmin
-  #   environment:
-  #     PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
-  #     PGADMIN_DEFAULT_PASSWORD: "root"
-  #   # volumes:
-  #   #   - "pgadmin_data:/var/lib/pgadmin"
-  #   ports:
-  #     - "8085:80"
-  #   # networks:
-  #   #   - pg-shared-network
-  #   depends_on:
-  #     pgdatabase:
-  #       condition: service_started
-
   kestra_postgres:
     image: postgres:18
     volumes:
       - kestra_postgres_data:/var/lib/postgresql
+    container_name: kestra_postgres
     environment:
       POSTGRES_DB: kestra
       POSTGRES_USER: kestra
@@ -46,10 +12,11 @@ services:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
       interval: 30s
       timeout: 10s
-      retries: 10
+      retries: 5
 
   kestra:
     image: kestra/kestra:v1.1
+    container_name: kestra_server
     pull_policy: always
     # Note that this setup with a root user is intended for development purpose.
     # Our base image runs without root, but the Docker Compose implementation needs root to access the Docker socket
@@ -60,6 +27,7 @@ services:
       - kestra_data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/kestra-wd:/tmp/kestra-wd
+      - ./02_kestra_pipeline/flows:app/flows
     environment:
       KESTRA_CONFIGURATION: |
         datasources:
@@ -94,14 +62,62 @@ services:
       kestra_postgres:
         condition: service_started
 
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-bigquery:1.7.0
+    container_name: dbt_worker
+    volumes:
+      - ./dbt_project:/usr/app
+    profiles:
+      - ./dbt_project/profiles.yml
+    working_dir: /usr/app
+    environment:
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+    # This container stays idle until you run a command like 'docker exec dbt dbt run'
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+    # The Postgres Database Service
+  # pgdatabase:
+  #   image: postgres:18
+  #   container_name: pgdatabase
+  #   environment:
+  #     POSTGRES_USER: "root"
+  #     POSTGRES_PASSWORD: "root"
+  #     POSTGRES_DB: "ny_taxi"
+  #   volumes:
+  #     - "ny_taxi_postgres_data:/var/lib/postgresql"
+  #   ports:
+  #     - "5432:5432"
+  #   # networks:
+  #   #   - pg-shared-network
+  #   depends_on:
+  #     kestra:
+  #       condition: service_started
+
+  # # The pgAdmin Management Service
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: my-pgadmin
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+  #     PGADMIN_DEFAULT_PASSWORD: "root"
+  #   # volumes:
+  #   #   - "pgadmin_data:/var/lib/pgadmin"
+  #   ports:
+  #     - "8085:80"
+  #   # networks:
+  #   #   - pg-shared-network
+  #   depends_on:
+  #     pgdatabase:
+  #       condition: service_started
+
 # Define the shared network and persistent volumes
 # networks:
 #   pg-shared-network:
 #     driver: bridge
 
 volumes:
-  ny_taxi_postgres_data:
-    driver: local
+  # ny_taxi_postgres_data:
+  #   driver: local
   # pgadmin_data:
   #   driver: local
   kestra_postgres_data:
