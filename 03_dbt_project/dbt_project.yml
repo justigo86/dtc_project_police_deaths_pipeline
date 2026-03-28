@@ -1,0 +1,33 @@
+name: 'police_deaths_pipeline'
+version: '1.0.0'
+config-version: 2
+
+# Matches profiles.yml profile name (top)
+profile: 'police_deaths_pipeline'
+
+# Configurations to specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# CONFIGURATION
+# Building tables in BigQuery
+models:
+  police_deaths_pipeline:
+    staging:
+      +materialized: view
+    # Marts/Final tables should be materialized as tables with partitioning
+    marts:
+      +materialized: table
+      +partition_by:
+        field: end_of_watch_date
+        data_type: date
+        granularity: year
+      +cluster_by: ["risk_category", "state"]
