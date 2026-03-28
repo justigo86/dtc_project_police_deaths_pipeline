@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw_data  # called with {{ source() }}
+    database: "{{ env_var('GCP_PROJECT_ID') }}" # uses .env variable
+    schema: proj_bq_dataset # bigQuery dataset name
+    tables:
+      - name: raw_police_deaths # called via {{ source('raw_data', 'raw_police_deaths') }}
+        description: "Raw external table of US Police Deaths ingested from Kaggle via Kestra."
+        columns:
+          - name: Name
+            tests:
+              - not_null
+          - name: End_Of_Watch
+            description: "Timestamp of the incident."
+            tests:
+              - not_null
+          - name: Cause
+            description: "How the officer died."

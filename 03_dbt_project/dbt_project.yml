@@ -23,6 +23,8 @@ models:
   police_deaths_pipeline:
     staging:
       +materialized: view
+    intermediate:
+      +materialized: view
     # Marts/Final tables should be materialized as tables with partitioning
     marts:
       +materialized: table
