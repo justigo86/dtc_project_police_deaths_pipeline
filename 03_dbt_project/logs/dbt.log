@@ -605,3 +605,333 @@ SELECT * FROM joined;
 [0m06:20:26.601414 [debug] [MainThread]: Command `dbt run` succeeded at 06:20:26.601136 after 4.13 seconds
 [0m06:20:26.602352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d07afb226b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d07abf85330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d07abbc40d0>]}
 [0m06:20:26.603541 [debug] [MainThread]: Flushing usage events
+[0m02:48:40.931793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d277be5840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d27596a2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d27596a260>]}
+
+
+============================== 02:48:40.938968 | 65537f96-dc50-4f7d-a41b-ffa56661d6a7 ==============================
+[0m02:48:40.938968 [info ] [MainThread]: Running with dbt=1.7.0
+[0m02:48:40.940000 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/logs', 'fail_fast': 'False', 'profiles_dir': '/usr/app', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:48:42.232544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d27406e4a0>]}
+[0m02:48:42.379271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d27591f160>]}
+[0m02:48:42.394931 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m02:48:42.433264 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m02:48:42.640091 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m02:48:42.641094 [debug] [MainThread]: Partial parsing: updated file: police_deaths_pipeline://seeds/cause_mapping.csv
+[0m02:48:42.641843 [debug] [MainThread]: Partial parsing: updated file: police_deaths_pipeline://models/02_intermediate/int_police_deaths.sql
+[0m02:48:43.036141 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.police_deaths_pipeline.intermediate
+- models.police_deaths_pipeline.marts
+- models.police_deaths_pipeline.staging
+[0m02:48:43.045592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d271999b10>]}
+[0m02:48:43.090013 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d273ce7e50>]}
+[0m02:48:43.091146 [info ] [MainThread]: Found 3 models, 2 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 590 macros, 0 groups, 0 semantic models
+[0m02:48:43.092014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d274132f50>]}
+[0m02:48:43.094997 [info ] [MainThread]: 
+[0m02:48:43.096913 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:48:43.100591 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_zoomcamp-final-project-491003'
+[0m02:48:43.101869 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:48:43.647724 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003, now list_zoomcamp-final-project-491003_proj_bq_dataset)
+[0m02:48:43.648796 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:48:44.074607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d274132bf0>]}
+[0m02:48:44.075791 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:48:44.076381 [info ] [MainThread]: 
+[0m02:48:44.100075 [debug] [Thread-1 (]: Began running node seed.police_deaths_pipeline.cause_mapping
+[0m02:48:44.100986 [info ] [Thread-1 (]: 1 of 1 START seed file proj_bq_dataset.cause_mapping ........................... [RUN]
+[0m02:48:44.102316 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003_proj_bq_dataset, now seed.police_deaths_pipeline.cause_mapping)
+[0m02:48:44.103460 [debug] [Thread-1 (]: Began compiling node seed.police_deaths_pipeline.cause_mapping
+[0m02:48:44.104581 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (compile): 02:48:44.104071 => 02:48:44.104078
+[0m02:48:44.105354 [debug] [Thread-1 (]: Began executing node seed.police_deaths_pipeline.cause_mapping
+[0m02:48:44.156280 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:48:48.700580 [debug] [Thread-1 (]: On seed.police_deaths_pipeline.cause_mapping: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "police_deaths_pipeline", "target_name": "dev", "node_id": "seed.police_deaths_pipeline.cause_mapping"} */
+
+    alter table `zoomcamp-final-project-491003`.`proj_bq_dataset`.`cause_mapping` set OPTIONS()
+  
+[0m02:48:49.117678 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=zoomcamp-final-project-491003&j=bq:US:d62eec09-a57b-4fc5-9b6b-b7e2e0403048&page=queryresults
+[0m02:48:49.669100 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.police_deaths_pipeline.cause_mapping"
+[0m02:48:49.713786 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (execute): 02:48:44.106057 => 02:48:49.713223
+[0m02:48:49.715465 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '65537f96-dc50-4f7d-a41b-ffa56661d6a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d2719efdc0>]}
+[0m02:48:49.716720 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file proj_bq_dataset.cause_mapping ....................... [[32mINSERT 38[0m in 5.61s]
+[0m02:48:49.718693 [debug] [Thread-1 (]: Finished running node seed.police_deaths_pipeline.cause_mapping
+[0m02:48:49.723482 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:48:49.724014 [debug] [MainThread]: Connection 'seed.police_deaths_pipeline.cause_mapping' was properly closed.
+[0m02:48:49.724732 [info ] [MainThread]: 
+[0m02:48:49.725506 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 6.63 seconds (6.63s).
+[0m02:48:49.727292 [debug] [MainThread]: Command end result
+[0m02:48:49.753849 [info ] [MainThread]: 
+[0m02:48:49.756887 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:48:49.758079 [info ] [MainThread]: 
+[0m02:48:49.759497 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m02:48:49.763640 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 8.934957, "process_user_time": 4.850876, "process_kernel_time": 0.89438, "process_mem_max_rss": "133520", "process_in_blocks": "107696", "process_out_blocks": "3824"}
+[0m02:48:49.765031 [debug] [MainThread]: Command `dbt seed` succeeded at 02:48:49.764747 after 8.94 seconds
+[0m02:48:49.765927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d277be5840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d2758d3280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d27406e4a0>]}
+[0m02:48:49.766588 [debug] [MainThread]: Flushing usage events
+[0m02:50:47.919631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750d0d3b5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ceaa6290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ceaa6230>]}
+
+
+============================== 02:50:47.924164 | ae9a7e45-460f-42fe-8799-b3f246779dd7 ==============================
+[0m02:50:47.924164 [info ] [MainThread]: Running with dbt=1.7.0
+[0m02:50:47.925224 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/usr/app', 'log_path': '/usr/app/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt seed', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:50:48.767792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750cd72e050>]}
+[0m02:50:48.915135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750cd174b20>]}
+[0m02:50:48.916235 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m02:50:48.945121 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m02:50:49.019994 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:50:49.020972 [debug] [MainThread]: Partial parsing: updated file: police_deaths_pipeline://seeds/cause_mapping.csv
+[0m02:50:49.205978 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.police_deaths_pipeline.marts
+- models.police_deaths_pipeline.intermediate
+- models.police_deaths_pipeline.staging
+[0m02:50:49.218489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ccd5c490>]}
+[0m02:50:49.244720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ccdfffa0>]}
+[0m02:50:49.245446 [info ] [MainThread]: Found 3 models, 2 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 590 macros, 0 groups, 0 semantic models
+[0m02:50:49.246083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ccdffb20>]}
+[0m02:50:49.248433 [info ] [MainThread]: 
+[0m02:50:49.249760 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:50:49.251748 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_zoomcamp-final-project-491003'
+[0m02:50:49.252457 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:50:49.773055 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003, now list_zoomcamp-final-project-491003_proj_bq_dataset)
+[0m02:50:49.773946 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:50:50.201811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ccdff400>]}
+[0m02:50:50.203320 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:50:50.204106 [info ] [MainThread]: 
+[0m02:50:50.210615 [debug] [Thread-1 (]: Began running node seed.police_deaths_pipeline.cause_mapping
+[0m02:50:50.211830 [info ] [Thread-1 (]: 1 of 1 START seed file proj_bq_dataset.cause_mapping ........................... [RUN]
+[0m02:50:50.213412 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003_proj_bq_dataset, now seed.police_deaths_pipeline.cause_mapping)
+[0m02:50:50.215165 [debug] [Thread-1 (]: Began compiling node seed.police_deaths_pipeline.cause_mapping
+[0m02:50:50.217122 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (compile): 02:50:50.216238 => 02:50:50.216245
+[0m02:50:50.218717 [debug] [Thread-1 (]: Began executing node seed.police_deaths_pipeline.cause_mapping
+[0m02:50:50.269481 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:50:54.948798 [debug] [Thread-1 (]: On seed.police_deaths_pipeline.cause_mapping: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "police_deaths_pipeline", "target_name": "dev", "node_id": "seed.police_deaths_pipeline.cause_mapping"} */
+
+    alter table `zoomcamp-final-project-491003`.`proj_bq_dataset`.`cause_mapping` set OPTIONS()
+  
+[0m02:50:55.475368 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=zoomcamp-final-project-491003&j=bq:US:95c32907-e8a3-4251-bd7a-4b5547628fa8&page=queryresults
+[0m02:50:55.911480 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.police_deaths_pipeline.cause_mapping"
+[0m02:50:55.954929 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (execute): 02:50:50.219385 => 02:50:55.954560
+[0m02:50:55.956334 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ae9a7e45-460f-42fe-8799-b3f246779dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750ccd5d4b0>]}
+[0m02:50:55.957245 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file proj_bq_dataset.cause_mapping ....................... [[32mINSERT 38[0m in 5.74s]
+[0m02:50:55.958780 [debug] [Thread-1 (]: Finished running node seed.police_deaths_pipeline.cause_mapping
+[0m02:50:55.963622 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:50:55.964241 [debug] [MainThread]: Connection 'seed.police_deaths_pipeline.cause_mapping' was properly closed.
+[0m02:50:55.964889 [info ] [MainThread]: 
+[0m02:50:55.965739 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 6.72 seconds (6.72s).
+[0m02:50:55.967443 [debug] [MainThread]: Command end result
+[0m02:50:55.994374 [info ] [MainThread]: 
+[0m02:50:55.996079 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:50:55.997244 [info ] [MainThread]: 
+[0m02:50:55.998953 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m02:50:56.001332 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 8.171774, "process_user_time": 4.435272, "process_kernel_time": 0.66606, "process_mem_max_rss": "131744", "process_in_blocks": "256", "process_out_blocks": "3816"}
+[0m02:50:56.002292 [debug] [MainThread]: Command `dbt seed` succeeded at 02:50:56.002053 after 8.17 seconds
+[0m02:50:56.003127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750d0d3b5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750cce10040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7750cec04ee0>]}
+[0m02:50:56.003897 [debug] [MainThread]: Flushing usage events
+[0m02:53:03.747179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f5c4f6620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f5a22e230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f5a22e1d0>]}
+
+
+============================== 02:53:03.751433 | 9a2be1cf-3194-44ac-b729-3043f426403c ==============================
+[0m02:53:03.751433 [info ] [MainThread]: Running with dbt=1.7.0
+[0m02:53:03.752378 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/app/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select int_police_deaths', 'send_anonymous_usage_stats': 'True'}
+[0m02:53:04.538303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f58ed1cf0>]}
+[0m02:53:04.694889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f58935090>]}
+[0m02:53:04.696025 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m02:53:04.725303 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m02:53:04.814766 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m02:53:04.815455 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m02:53:04.816739 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.police_deaths_pipeline.intermediate
+- models.police_deaths_pipeline.marts
+- models.police_deaths_pipeline.staging
+[0m02:53:04.826279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f585f9480>]}
+[0m02:53:04.854890 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f585bfbe0>]}
+[0m02:53:04.855724 [info ] [MainThread]: Found 3 models, 2 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 590 macros, 0 groups, 0 semantic models
+[0m02:53:04.856424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f585bf820>]}
+[0m02:53:04.858791 [info ] [MainThread]: 
+[0m02:53:04.861332 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:53:04.864270 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_zoomcamp-final-project-491003'
+[0m02:53:04.865605 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:53:04.078011 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003, now list_zoomcamp-final-project-491003_proj_bq_dataset)
+[0m02:53:04.079172 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:53:04.616384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f585bef80>]}
+[0m02:53:04.617558 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:53:04.618225 [info ] [MainThread]: 
+[0m02:53:04.627387 [debug] [Thread-1 (]: Began running node model.police_deaths_pipeline.int_police_deaths
+[0m02:53:04.628603 [info ] [Thread-1 (]: 1 of 1 START sql view model proj_bq_dataset.int_police_deaths .................. [RUN]
+[0m02:53:04.630061 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003_proj_bq_dataset, now model.police_deaths_pipeline.int_police_deaths)
+[0m02:53:04.651994 [debug] [Thread-1 (]: Began compiling node model.police_deaths_pipeline.int_police_deaths
+[0m02:53:04.667999 [debug] [Thread-1 (]: Writing injected SQL for node "model.police_deaths_pipeline.int_police_deaths"
+[0m02:53:04.670350 [debug] [Thread-1 (]: Timing info for model.police_deaths_pipeline.int_police_deaths (compile): 02:53:04.652695 => 02:53:04.669978
+[0m02:53:04.671085 [debug] [Thread-1 (]: Began executing node model.police_deaths_pipeline.int_police_deaths
+[0m02:53:04.714750 [debug] [Thread-1 (]: Writing runtime sql for node "model.police_deaths_pipeline.int_police_deaths"
+[0m02:53:04.716165 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:53:04.718202 [debug] [Thread-1 (]: On model.police_deaths_pipeline.int_police_deaths: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "police_deaths_pipeline", "target_name": "dev", "node_id": "model.police_deaths_pipeline.int_police_deaths"} */
+
+
+  create or replace view `zoomcamp-final-project-491003`.`proj_bq_dataset`.`int_police_deaths`
+  OPTIONS()
+  as WITH staging AS (
+    SELECT * FROM `zoomcamp-final-project-491003`.`proj_bq_dataset`.`stg_police_deaths`
+),
+
+categories AS (
+    SELECT * FROM `zoomcamp-final-project-491003`.`proj_bq_dataset`.`cause_mapping`
+),
+
+joined AS (
+    SELECT
+        s.*,
+        -- 'Other/Unknown' if seed data null or missing
+        COALESCE(c.risk_category, 'Other/Unknown') AS risk_category,
+        -- incident year vs.
+        EXTRACT(YEAR FROM s.end_of_watch_date) AS incident_year,
+        -- incident decade for violence percentages
+        FLOOR(EXTRACT(YEAR FROM s.end_of_watch_date) / 10) * 10 AS incident_decade,
+        -- day of week col to ensure correct day being used
+        FORMAT_DATE('%A', s.end_of_watch_date) AS day_of_week_name
+    FROM staging AS s
+    LEFT JOIN categories AS c
+        ON s.cause_raw = c.cause
+)
+
+SELECT * FROM joined;
+
+
+[0m02:53:05.793098 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=zoomcamp-final-project-491003&j=bq:US:9d4bd57f-d02b-4fff-a35c-66752ac347a2&page=queryresults
+[0m02:53:06.248943 [debug] [Thread-1 (]: Timing info for model.police_deaths_pipeline.int_police_deaths (execute): 02:53:04.671531 => 02:53:06.248538
+[0m02:53:06.250160 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9a2be1cf-3194-44ac-b729-3043f426403c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f589365c0>]}
+[0m02:53:06.251223 [info ] [Thread-1 (]: 1 of 1 OK created sql view model proj_bq_dataset.int_police_deaths ............. [[32mCREATE VIEW (0 processed)[0m in 1.62s]
+[0m02:53:06.252642 [debug] [Thread-1 (]: Finished running node model.police_deaths_pipeline.int_police_deaths
+[0m02:53:06.256677 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:53:06.257226 [debug] [MainThread]: Connection 'model.police_deaths_pipeline.int_police_deaths' was properly closed.
+[0m02:53:06.257841 [info ] [MainThread]: 
+[0m02:53:06.258643 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.40 seconds (1.40s).
+[0m02:53:06.260329 [debug] [MainThread]: Command end result
+[0m02:53:06.295107 [info ] [MainThread]: 
+[0m02:53:06.296409 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:53:06.297121 [info ] [MainThread]: 
+[0m02:53:06.297979 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m02:53:06.300222 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.100025, "process_user_time": 4.254798, "process_kernel_time": 0.54814, "process_mem_max_rss": "130228", "process_in_blocks": "8", "process_out_blocks": "2560"}
+[0m02:53:06.301453 [debug] [MainThread]: Command `dbt run` succeeded at 02:53:06.301199 after 4.10 seconds
+[0m02:53:06.302392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f5c4f6620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f5898b580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717f585a75b0>]}
+[0m02:53:06.303391 [debug] [MainThread]: Flushing usage events
+[0m02:57:23.600062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2032e35e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb201066290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb201066230>]}
+
+
+============================== 02:57:23.606808 | b63ed100-17b9-4520-9db6-9fa61a3294ad ==============================
+[0m02:57:23.606808 [info ] [MainThread]: Running with dbt=1.7.0
+[0m02:57:23.607830 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/usr/app/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt seed', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:57:24.659284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb20101e500>]}
+[0m02:57:24.837855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff561750>]}
+[0m02:57:24.839522 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m02:57:24.875295 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m02:57:24.998469 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:57:24.999534 [debug] [MainThread]: Partial parsing: updated file: police_deaths_pipeline://seeds/cause_mapping.csv
+[0m02:57:25.230809 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.police_deaths_pipeline.staging
+- models.police_deaths_pipeline.intermediate
+- models.police_deaths_pipeline.marts
+[0m02:57:25.239654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff318430>]}
+[0m02:57:25.278731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff3f3ee0>]}
+[0m02:57:25.279551 [info ] [MainThread]: Found 3 models, 2 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 590 macros, 0 groups, 0 semantic models
+[0m02:57:25.280495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff3f3fa0>]}
+[0m02:57:25.283199 [info ] [MainThread]: 
+[0m02:57:25.285016 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:57:25.288075 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_zoomcamp-final-project-491003'
+[0m02:57:25.289354 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:57:26.045986 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003, now list_zoomcamp-final-project-491003_proj_bq_dataset)
+[0m02:57:26.047303 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:57:26.581986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff3f33d0>]}
+[0m02:57:26.583245 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:57:26.584037 [info ] [MainThread]: 
+[0m02:57:26.590270 [debug] [Thread-1 (]: Began running node seed.police_deaths_pipeline.cause_mapping
+[0m02:57:26.591385 [info ] [Thread-1 (]: 1 of 1 START seed file proj_bq_dataset.cause_mapping ........................... [RUN]
+[0m02:57:26.592814 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003_proj_bq_dataset, now seed.police_deaths_pipeline.cause_mapping)
+[0m02:57:26.593443 [debug] [Thread-1 (]: Began compiling node seed.police_deaths_pipeline.cause_mapping
+[0m02:57:26.594461 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (compile): 02:57:26.593839 => 02:57:26.593845
+[0m02:57:26.595235 [debug] [Thread-1 (]: Began executing node seed.police_deaths_pipeline.cause_mapping
+[0m02:57:26.646482 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:57:31.214223 [debug] [Thread-1 (]: On seed.police_deaths_pipeline.cause_mapping: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "police_deaths_pipeline", "target_name": "dev", "node_id": "seed.police_deaths_pipeline.cause_mapping"} */
+
+    alter table `zoomcamp-final-project-491003`.`proj_bq_dataset`.`cause_mapping` set OPTIONS()
+  
+[0m02:57:31.631519 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=zoomcamp-final-project-491003&j=bq:US:0ff23e36-0006-4661-b53b-490cc549cd57&page=queryresults
+[0m02:57:32.177811 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.police_deaths_pipeline.cause_mapping"
+[0m02:57:32.228065 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (execute): 02:57:26.595795 => 02:57:32.227499
+[0m02:57:32.229393 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b63ed100-17b9-4520-9db6-9fa61a3294ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff319450>]}
+[0m02:57:32.230331 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file proj_bq_dataset.cause_mapping ....................... [[32mINSERT 38[0m in 5.64s]
+[0m02:57:32.231703 [debug] [Thread-1 (]: Finished running node seed.police_deaths_pipeline.cause_mapping
+[0m02:57:32.235305 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:57:32.235770 [debug] [MainThread]: Connection 'seed.police_deaths_pipeline.cause_mapping' was properly closed.
+[0m02:57:32.236568 [info ] [MainThread]: 
+[0m02:57:32.237225 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 6.95 seconds (6.95s).
+[0m02:57:32.238641 [debug] [MainThread]: Command end result
+[0m02:57:32.263731 [info ] [MainThread]: 
+[0m02:57:32.264987 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:57:32.265860 [info ] [MainThread]: 
+[0m02:57:32.266674 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m02:57:32.269148 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 8.745868, "process_user_time": 4.796386, "process_kernel_time": 1.354499, "process_mem_max_rss": "131932", "process_in_blocks": "8", "process_out_blocks": "3808"}
+[0m02:57:32.270042 [debug] [MainThread]: Command `dbt seed` succeeded at 02:57:32.269858 after 8.75 seconds
+[0m02:57:32.270640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2032e35e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff404070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb1ff6e3310>]}
+[0m02:57:32.271471 [debug] [MainThread]: Flushing usage events
+[0m03:08:59.918913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911efac6650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ed84a260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ed84a200>]}
+
+
+============================== 03:08:59.923223 | 0fd650ca-bccd-4022-a4a1-5db6d0df2e0e ==============================
+[0m03:08:59.923223 [info ] [MainThread]: Running with dbt=1.7.0
+[0m03:08:59.924160 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/app/logs', 'version_check': 'True', 'profiles_dir': '/usr/app', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt seed', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m03:09:00.769351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ec4de200>]}
+[0m03:09:00.919113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebd52710>]}
+[0m03:09:00.920304 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m03:09:00.952353 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m03:09:01.030277 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m03:09:01.031354 [debug] [MainThread]: Partial parsing: updated file: police_deaths_pipeline://seeds/cause_mapping.csv
+[0m03:09:01.244482 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.police_deaths_pipeline.intermediate
+- models.police_deaths_pipeline.marts
+- models.police_deaths_pipeline.staging
+[0m03:09:01.254538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebafc640>]}
+[0m03:09:01.287708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebbd7dc0>]}
+[0m03:09:01.288730 [info ] [MainThread]: Found 3 models, 2 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 590 macros, 0 groups, 0 semantic models
+[0m03:09:01.289735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebbe82b0>]}
+[0m03:09:01.292251 [info ] [MainThread]: 
+[0m03:09:01.294423 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m03:09:01.297047 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_zoomcamp-final-project-491003'
+[0m03:09:01.298055 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:09:01.860560 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003, now list_zoomcamp-final-project-491003_proj_bq_dataset)
+[0m03:09:01.861558 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:09:02.275755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebbd75e0>]}
+[0m03:09:02.277979 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m03:09:02.278936 [info ] [MainThread]: 
+[0m03:09:02.292829 [debug] [Thread-1 (]: Began running node seed.police_deaths_pipeline.cause_mapping
+[0m03:09:02.294529 [info ] [Thread-1 (]: 1 of 1 START seed file proj_bq_dataset.cause_mapping ........................... [RUN]
+[0m03:09:02.296196 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_zoomcamp-final-project-491003_proj_bq_dataset, now seed.police_deaths_pipeline.cause_mapping)
+[0m03:09:02.297100 [debug] [Thread-1 (]: Began compiling node seed.police_deaths_pipeline.cause_mapping
+[0m03:09:02.299051 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (compile): 03:09:02.297783 => 03:09:02.297788
+[0m03:09:02.299871 [debug] [Thread-1 (]: Began executing node seed.police_deaths_pipeline.cause_mapping
+[0m03:09:02.363926 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:09:07.218952 [debug] [Thread-1 (]: On seed.police_deaths_pipeline.cause_mapping: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "police_deaths_pipeline", "target_name": "dev", "node_id": "seed.police_deaths_pipeline.cause_mapping"} */
+
+    alter table `zoomcamp-final-project-491003`.`proj_bq_dataset`.`cause_mapping` set OPTIONS()
+  
+[0m03:09:07.846563 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=zoomcamp-final-project-491003&j=bq:US:c955871a-6000-48ab-b43d-65a5b6ae3b4d&page=queryresults
+[0m03:09:08.503446 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.police_deaths_pipeline.cause_mapping"
+[0m03:09:08.528443 [debug] [Thread-1 (]: Timing info for seed.police_deaths_pipeline.cause_mapping (execute): 03:09:02.300368 => 03:09:08.528006
+[0m03:09:08.529998 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0fd650ca-bccd-4022-a4a1-5db6d0df2e0e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebafd690>]}
+[0m03:09:08.531091 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file proj_bq_dataset.cause_mapping ....................... [[32mINSERT 39[0m in 6.23s]
+[0m03:09:08.532589 [debug] [Thread-1 (]: Finished running node seed.police_deaths_pipeline.cause_mapping
+[0m03:09:08.537635 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:09:08.538370 [debug] [MainThread]: Connection 'seed.police_deaths_pipeline.cause_mapping' was properly closed.
+[0m03:09:08.539217 [info ] [MainThread]: 
+[0m03:09:08.541193 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 7.25 seconds (7.25s).
+[0m03:09:08.545351 [debug] [MainThread]: Command end result
+[0m03:09:08.573662 [info ] [MainThread]: 
+[0m03:09:08.574742 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:09:08.575537 [info ] [MainThread]: 
+[0m03:09:08.576490 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m03:09:08.578764 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 8.738266, "process_user_time": 4.502004, "process_kernel_time": 0.685254, "process_mem_max_rss": "132032", "process_out_blocks": "3808", "process_in_blocks": "0"}
+[0m03:09:08.580132 [debug] [MainThread]: Command `dbt seed` succeeded at 03:09:08.579891 after 8.74 seconds
+[0m03:09:08.581171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911efac6650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ec4ddc00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7911ebd8ef80>]}
+[0m03:09:08.582977 [debug] [MainThread]: Flushing usage events
