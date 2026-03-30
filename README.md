@@ -1,9 +1,23 @@
 ## DataTalksClub Data Engineering Zoomcamp 2026 Final Project
 
-# Questions to answer from dataset:
-1. "How has the risk profile of American law enforcement shifted over the years when comparing 'Intentional/Violent' causes of death vs. 'Accidental/Environmental' causes?"
-2. Assessing violent vs non-violent percentages per decade
-3. Assess what types of deaths are more likely based on day of the week
+# Problem Statement:
+Using the [historical dataset of US police deaths](https://www.kaggle.com/datasets/mayureshkoli/police-deaths-in-usa-from-1791-to-2022/data?select=police_deaths_USA_v7.csv) from Kaggle, create a pipeline using many of the technologies covered in the zoomcampe in order to answer four primary questions for the dataset:
+1. What is the breakdown of the causes of deaths for US law enforcement officers?
+2. How has the risk profile of American law enforcement shifted over the years when comparing 'Intentional/Violent', 'Accidental/Environmental', and 'Medical' types of causes of deaths?
+3. With the same death types categorization, has there been a pattern in the distribution of deaths across different days of the week?
+4. What states have historically had the largest percetage of deaths that would categorized as 'Intentional/Violent'?
+
+# Technologies used:
+- Docker - containerization
+- Terraform - infractructure as code
+- GCP - cloud
+- - Cloud Storage - data lake
+- - BigQuery - data warehouse
+- Kestra - orchestration
+- - batch pipeline
+- dbt - transformation
+- Looker Studio - dashboard/presentation
+
 
 # Reproducibility
 Steps:

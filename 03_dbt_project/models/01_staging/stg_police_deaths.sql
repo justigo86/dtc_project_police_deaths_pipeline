@@ -4,21 +4,21 @@ WITH source AS (
 
 renamed AS (
     SELECT
-        -- Primary Key (Composite)
+        -- PK
         {{ dbt_utils.generate_surrogate_key(['Name', 'End_Of_Watch', 'Department']) }} AS death_id,
         
-        -- Core Info
+        -- core info
         CAST(Rank AS STRING) AS rank,
         CAST(Name AS STRING) AS officer_name,
         CAST(Age AS FLOAT64) AS age, 
         
-        -- Casting DATETIME to DATE for partitioning
+        -- cast DATETIME to DATE for partitioning
         CAST(End_Of_Watch AS DATE) AS end_of_watch_date,
         
         CAST(Department AS STRING) AS department,
         CAST(State AS STRING) AS state,
         
-        -- Incident Info
+        -- incidents
         CAST(Cause AS STRING) AS cause_raw,
         CAST(Weapon AS STRING) AS weapon,
         CAST(Offender AS STRING) AS offender_status,

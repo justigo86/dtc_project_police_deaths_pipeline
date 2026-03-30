@@ -1,17 +1,18 @@
-{{ 
-  config(
-    materialized='table',
-    partition_by={
-      "field": "end_of_watch_date",
-      "data_type": "date",
-      "granularity": "year"
-    },
-    cluster_by=["risk_category", "state"]
-  ) 
-}}
+
+  
+    
+
+    create or replace table `zoomcamp-final-project-491003`.`proj_bq_dataset`.`fct_police_deaths`
+      
+    partition by date_trunc(end_of_watch_date, year)
+    cluster by risk_category, state
+
+    OPTIONS()
+    as (
+      
 
 WITH intermediate AS (
-    SELECT * FROM {{ ref('int_police_deaths') }}
+    SELECT * FROM `zoomcamp-final-project-491003`.`proj_bq_dataset`.`int_police_deaths`
 )
 
 SELECT
@@ -37,3 +38,5 @@ SELECT
     incident_summary
 
 FROM intermediate
+    );
+  
