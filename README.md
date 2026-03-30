@@ -7,6 +7,11 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
 3. With the same death types categorization, has there been a pattern in the distribution of deaths across different days of the week?
 4. What states have historically had the largest percetage of deaths that would categorized as 'Intentional/Violent'?
 
+## Looker Studio Charts to Answer Questions:
+![Police Deaths By Cause](media/01_US_police_deaths_by_cause.png)
+![Violent Police Deaths Timeline](media/02_US_police_deaths_violence_timeline.png)
+![Police Deaths Weekday Info and Map](media/03_US_police_deaths_weekday_map.png)
+
 ## Technologies used:
 - WSL:Ubuntu - development environment
 - Docker - containerization
