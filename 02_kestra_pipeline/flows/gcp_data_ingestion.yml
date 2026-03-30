@@ -1,4 +1,4 @@
-id: 03_data_ingestion
+id: data_ingestion
 namespace: zoomcamp
 
 tasks:
@@ -13,7 +13,7 @@ tasks:
       - mkdir -p {{ workingDir }}/data
       - export KAGGLE_CONFIG_DIR={{ workingDir }}
       # Create the kaggle.json on the fly using your credentials
-      - echo "{\"username\":\"{{ secret('KAGGLE_USERNAME')}}\",\"key\":\"{{ secret('KAGGLE_KEY') }}\"}" > {{ workingDir }}//kaggle.json
+      - echo "{\"username\":\"{{ secret('KAGGLE_USERNAME') }}\",\"key\":\"{{ secret('KAGGLE_KEY') }}\"}" > {{ workingDir }}//kaggle.json
       - chmod 600 {{ workingDir }}/kaggle.json
       - kaggle datasets download -d mayureshkoli/police-deaths-in-usa-from-1791-to-2022 --unzip -p {{ workingDir }}/data
     outputFiles:
@@ -24,12 +24,12 @@ tasks:
     type: io.kestra.plugin.gcp.gcs.Upload
     # Point directly to the specific file output from the previous task
     from: "{{ outputs.extract_from_kaggle.outputFiles['data/police_deaths_USA_v7.csv'] }}"
-    to: "gs://{{ kv('GCP_BUCKET_NAME') }}/kestra_raw/police_deaths/year={{ now() | date('yyyy') }}/month={{ now() | date('MM') }}/police_deaths_USA_v7.csv"
+    to: "gs://{{ secret('GCP_BUCKET_NAME') }}/kestra_raw/police_deaths/year={{ execution.startDate | date('yyyy') }}/month={{ execution.startDate | date('MM') }}/police_deaths_USA_v7.csv"
 
   - id: create_external_bq_table
     type: io.kestra.plugin.gcp.bigquery.Query
     sql: |
-      CREATE OR REPLACE EXTERNAL TABLE `{{ kv('GCP_PROJECT_ID') }}.{{ kv('GCP_DATASET') }}.raw_police_deaths`
+      CREATE OR REPLACE EXTERNAL TABLE `{{ secret('GCP_PROJECT_ID') }}.{{ secret('GCP_DATASET') }}.raw_police_deaths`
       (
         Rank STRING,
         Name STRING,
@@ -47,7 +47,7 @@ tasks:
       )
       OPTIONS (
         format = 'CSV',
-        uris = ['gs://{{ kv('GCP_BUCKET_NAME') }}/kestra_raw/police_deaths/*'],
+        uris = ['gs://{{ secret('GCP_BUCKET_NAME') }}/kestra_raw/police_deaths/*'],
         skip_leading_rows = 1,
         ignore_unknown_values = TRUE,
         quote = '"',
@@ -58,10 +58,10 @@ tasks:
 pluginDefaults:
   - type: io.kestra.plugin.gcp
     values:
-      serviceAccount: "{{secret('GCP_CREDS')}}"
-      projectId: "{{kv('GCP_PROJECT_ID')}}"
-      location: "{{kv('GCP_LOCATION')}}"
-      bucket: "{{kv('GCP_BUCKET_NAME')}}"
+      serviceAccount: "{{ secret('GCP_CREDS') }}"
+      projectId: "{{ secret('GCP_PROJECT_ID') }}"
+      location: "{{ secret('GCP_LOCATION') }}"
+      bucket: "{{ secret('GCP_BUCKET_NAME') }}"
 
 triggers:
   - id: monthly_schedule

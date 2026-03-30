@@ -14,8 +14,8 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "proj-dl-bucket" {
-  name          = var.gcs_bucket_name
-  location      = var.location
+  name          = var.bucket_name
+  location      = var.region
   force_destroy = true
 
   lifecycle_rule {
@@ -30,6 +30,6 @@ resource "google_storage_bucket" "proj-dl-bucket" {
 
 
 resource "google_bigquery_dataset" "proj_dataset" {
-  dataset_id = var.bq_dataset_name
-  location   = var.location
+  dataset_id = var.dataset_id
+  location   = var.region
 }
