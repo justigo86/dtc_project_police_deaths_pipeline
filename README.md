@@ -9,8 +9,12 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
 
 ## Looker Studio Charts to Answer Questions:
 ![Police Deaths By Cause](media/01_US_police_deaths_by_cause.png)
+- x-axis: incident_decade_date with cause_raw breakdown => y-axis: record count
 ![Violent Police Deaths Timeline](media/02_US_police_deaths_violence_timeline.png)
+- x-axis: incident_decade_date => y-axis: violence rate %
 ![Police Deaths Weekday Info and Map](media/03_US_police_deaths_weekday_map.png)
+- x-axis: day_or_week_name => y-axis: record count => sort: day_of_week_sort
+- geo-dimension: state => metric: violence rate %	=> zoom area: US	# had to retype state => Geo => Country Subdivision
 
 ## Technologies used:
 - WSL:Ubuntu - development environment
@@ -37,6 +41,7 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
   git clone https://github.com/justigo86/dtc_project_police_deaths_pipeline.git <project_directory>
   cd <project_directory>
   ```
+
 1. [Google Cloud Platform (GCP) Account Required](https://console.cloud.google.com/)
 - Create a GCP Project
 - Create a GCS Bucket for project
@@ -45,6 +50,7 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
   - Create admin roles for Cloud Storage, BigQuery, and Compute Engine
   - Create and download a JSON key for the Service Account
   - Store JSON key in project with .json file (e.g., gcp_creds.json)
+
 2. GCP with Kestra consideration config
 - Using .env file as single source of truth - copy example and fill in with info
   ```bash
@@ -57,6 +63,7 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
   echo "SECRET_GCP_BUCKET_NAME=$(echo -n $GCP_BUCKET_NAME | base64 -w 0)" >> .env
   echo "SECRET_GCP_LOCATION=$(echo -n $GCP_LOCATION | base64 -w 0)" >> .env
   ```
+
 3. Terraform Deployment
 - Map to terraform variables - copy and paste into terminal for project directory
   - export TF_VAR_project=$GCP_PROJECT_ID
@@ -77,11 +84,13 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
   ```bash
   terraform apply
   ```
+
 4. Launch Docker containers
 - From project root directory - launch docker containers for Kestra and dbt
   ```bash
   docker compose up -d
   ```
+
 5. Executing the Pipeline (Kestra)
   - will download dataset from Kaggle API, store raw data in GCS data lake bucket, then transform and load data into BigQuery data warehouse
 - Access the Kestra UI: Open http://localhost:8080.
@@ -95,6 +104,7 @@ Using the [historical dataset of US police deaths](https://www.kaggle.com/datase
     - E.g., set start date as '2026-01-31 00:00:00' and end date as '2026-02-02 00:00:00' to run for February 2026
   - Click 'Execute backfill'
 - Can now view datasets in GCS bucket and query data in BigQuery
+
 6. Dashboard
 - Go to Looker Studio: lookerstudio.google.com
   - Create a data source
